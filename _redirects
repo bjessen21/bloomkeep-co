@@ -1,0 +1,13 @@
+# Bloomkeep Co. — Cloudflare Pages redirects
+# Site was built clean-URL from day one (no .html files exist in this repo),
+# but this file is kept per portfolio policy (failure mode #1 /
+# rank-and-rent-build-deploy-lessons-2026-08-23.md) as defense-in-depth in
+# case any legacy or guessed .html path is ever hit directly.
+
+/index.html              /  301
+/about.html               /about/  301
+/contact.html              /contact/  301
+/services.html              /services/  301
+/gallery.html              /gallery/  301
+/privacy-policy.html              /privacy-policy/  301
+/terms.html              /terms/  301
