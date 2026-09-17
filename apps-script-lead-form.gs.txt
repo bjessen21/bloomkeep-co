@@ -1,8 +1,8 @@
 /**
- * Bloomkeep Co. — lead form backend.
+ * Flower Rental OKC — lead form backend.
  *
  * SETUP:
- * 1. Create a new Google Sheet, e.g. "Bloomkeep Co. - Leads"
+ * 1. Create a new Google Sheet, e.g. "Flower Rental OKC - Leads"
  * 2. Extensions > Apps Script
  * 3. Delete any starter code and paste everything below.
  * 4. Deploy > New deployment > select type "Web app"
@@ -39,9 +39,9 @@ function doPost(e) {
   ]);
 
   var notifyEmail = 'barrettjessen21@gmail.com';
-  var subject = 'New website lead: ' + (data.name || 'Unknown') + ' — Bloomkeep Co.';
+  var subject = 'New website lead: ' + (data.name || 'Unknown') + ' — Flower Rental OKC';
   var body =
-    'New inquiry from the Bloomkeep Co. website:\n\n' +
+    'New inquiry from the Flower Rental OKC website:\n\n' +
     'Name: ' + (data.name || '') + '\n' +
     'Phone: ' + (data.phone || '') + '\n' +
     'Email: ' + (data.email || '') + '\n' +
