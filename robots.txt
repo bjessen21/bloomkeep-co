@@ -2,3 +2,4 @@ User-agent: *
 Allow: /
 
 Sitemap: https://www.bloomkeepco.com/sitemap.xml
+# reconnected Cloudflare GitHub App
