@@ -1,55 +1,41 @@
 /**
  * Flower Rental OKC — lead form backend.
  *
+ * This script does NOT use a spreadsheet. It only emails each lead
+ * straight to leads@flowerrentalokc.com, which forwards to Barrett's
+ * Gmail via Cloudflare Email Routing.
+ *
  * SETUP:
- * 1. Create a new Google Sheet, e.g. "Flower Rental OKC - Leads"
- * 2. Extensions > Apps Script
- * 3. Delete any starter code and paste everything below.
- * 4. Deploy > New deployment > select type "Web app"
+ * 1. Go to script.google.com > New project.
+ * 2. Delete any starter code and paste everything below.
+ * 3. Deploy > New deployment > select type "Web app"
  *      - Execute as: Me
  *      - Who has access: Anyone
- * 5. Click Deploy, then "Authorize access" and approve (it's your own script,
+ * 4. Click Deploy, then "Authorize access" and approve (it's your own script,
  *    the "Google hasn't verified this app" warning is expected — click
  *    Advanced > Go to project (unsafe) > Allow).
- * 6. Copy the Web app URL it gives you.
- * 7. In assets/site.js, find the line:
+ * 5. Copy the Web app URL it gives you.
+ * 6. In assets/site.js, find the line:
  *      var LEAD_ENDPOINT = 'PASTE_YOUR_APPS_SCRIPT_WEB_APP_URL_HERE';
  *    and replace the placeholder with the URL you copied. This one file
  *    powers the form on every page (home, both city pages, and /contact/).
- * 8. Re-deploy the Apps Script any time you edit this code
+ * 7. Re-deploy the Apps Script any time you edit this code
  *    (Deploy > Manage deployments > edit (pencil) > New version > Deploy) —
  *    saving the script alone does not update the live Web app URL's behavior.
  */
 
 function doPost(e) {
-  var sheet = SpreadsheetApp.getActiveSpreadsheet().getActiveSheet();
   var data = e.parameter;
   var timestamp = new Date();
 
-  sheet.appendRow([
-    timestamp,
-    data.name || '',
-    data.phone || '',
-    data.email || '',
-    data.event_date || '',
-    data.venue || '',
-    data.package || '',
-    data.guest_count || '',
-    data.message || ''
-  ]);
-
-  var notifyEmail = 'barrettjessen21@gmail.com';
+  var notifyEmail = 'leads@flowerrentalokc.com';
   var subject = 'New website lead: ' + (data.name || 'Unknown') + ' — Flower Rental OKC';
   var body =
     'New inquiry from the Flower Rental OKC website:\n\n' +
     'Name: ' + (data.name || '') + '\n' +
     'Phone: ' + (data.phone || '') + '\n' +
     'Email: ' + (data.email || '') + '\n' +
-    'Event Date: ' + (data.event_date || '') + '\n' +
-    'Venue/City: ' + (data.venue || '') + '\n' +
-    'Package Interest: ' + (data.package || '') + '\n' +
-    'Guest Count: ' + (data.guest_count || '') + '\n' +
-    'Message: ' + (data.message || '') + '\n\n' +
+    'Notes: ' + (data.notes || '') + '\n\n' +
     'Submitted: ' + timestamp;
 
   MailApp.sendEmail(notifyEmail, subject, body);
