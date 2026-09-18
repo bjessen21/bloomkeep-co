@@ -51,7 +51,7 @@
   // Paste your deployed Web App URL below. See
   // apps-script-lead-form.gs.txt for deployment steps.
   // ---------------------------------------------------------------
-  var LEAD_ENDPOINT = 'PASTE_YOUR_APPS_SCRIPT_WEB_APP_URL_HERE';
+  var LEAD_ENDPOINT = 'https://script.google.com/macros/s/AKfycbzwAZ_34VVE0t62bImlKrKhgj2S2ZFgZ9ErC0v0QnaiPi-zsf-5eLyD5zMkG7GtwMQqlw/exec';
 
   document.querySelectorAll('form.quote-form').forEach(function (form) {
     var note = form.querySelector('.form-note');
