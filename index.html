@@ -126,16 +126,16 @@
         <p>Tell us about your date and we'll follow up within one business day.</p>
         <form id="quoteForm" class="quote-form" novalidate>
           <label for="f-name">Name</label>
-          <input id="f-name" name="name" type="text" placeholder="Jane Bride" autocomplete="name">
+          <input id="f-name" name="name" type="text" placeholder="Jane Bride" autocomplete="name" required>
 
-          <label for="f-phone">Number</label>
-          <input id="f-phone" name="phone" type="tel" placeholder="(405) 555-0100" autocomplete="tel">
+          <label for="f-phone">Phone</label>
+          <input id="f-phone" name="phone" type="tel" placeholder="(405) 555-0100" autocomplete="tel" required>
 
-          <label for="f-email">Email</label>
+          <label for="f-email">Email <span style="font-weight:400;color:#a9968d;">(optional)</span></label>
           <input id="f-email" name="email" type="email" placeholder="jane@email.com" autocomplete="email">
 
-          <label for="f-notes">Notes on Event <span style="font-weight:400;color:#a9968d;">(optional)</span></label>
-          <textarea id="f-notes" name="notes" rows="3" placeholder="Event date, venue, color palette, style..."></textarea>
+          <label for="f-notes">Notes <span style="font-weight:400;color:#a9968d;">(optional)</span></label>
+          <textarea id="f-notes" name="notes" rows="3" placeholder="Anything we should know? Event date, venue, colors (optional)"></textarea>
 
           <button type="submit" class="pill-btn">Request My Free Quote</button>
           <div class="fine">No obligation. We reply within one business day.</div>

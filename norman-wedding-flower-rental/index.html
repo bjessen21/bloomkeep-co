@@ -108,13 +108,13 @@
         <p>Tell us your date and venue — we'll follow up within one business day.</p>
         <form class="quote-form" novalidate>
           <label for="nrm-name">Name</label>
-          <input id="nrm-name" name="name" type="text" placeholder="Jane Bride">
-          <label for="nrm-phone">Number</label>
-          <input id="nrm-phone" name="phone" type="tel" placeholder="(405) 555-0100">
-          <label for="nrm-email">Email</label>
-          <input id="nrm-email" name="email" type="email" placeholder="jane@email.com">
-          <label for="nrm-notes">Notes on Event <span style="font-weight:400;color:#a9968d;">(optional)</span></label>
-          <textarea id="nrm-notes" name="notes" rows="3" placeholder="Event date, venue, color palette, style..."></textarea>
+          <input id="nrm-name" name="name" type="text" placeholder="Jane Bride" autocomplete="name" required>
+          <label for="nrm-phone">Phone</label>
+          <input id="nrm-phone" name="phone" type="tel" placeholder="(405) 555-0100" autocomplete="tel" required>
+          <label for="nrm-email">Email <span style="font-weight:400;color:#a9968d;">(optional)</span></label>
+          <input id="nrm-email" name="email" type="email" placeholder="jane@email.com" autocomplete="email">
+          <label for="nrm-notes">Notes <span style="font-weight:400;color:#a9968d;">(optional)</span></label>
+          <textarea id="nrm-notes" name="notes" rows="3" placeholder="Anything we should know? Event date, venue, colors (optional)"></textarea>
           <button type="submit" class="pill-btn">Request My Free Quote</button>
           <div class="fine">No obligation. We reply within one business day.</div>
           <div class="form-note" role="status" aria-live="polite" hidden></div>

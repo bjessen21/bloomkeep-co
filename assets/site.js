@@ -59,6 +59,17 @@ var note = form.querySelector('.form-note');
 form.addEventListener('submit', function (e) {
 e.preventDefault();
 
+var nameVal = (form.querySelector('[name="name"]') || {}).value || '';
+var phoneVal = (form.querySelector('[name="phone"]') || {}).value || '';
+if (!nameVal.trim() || phoneVal.replace(/\D/g, '').length < 10) {
+if (note) {
+note.textContent = 'Please add your name and a 10-digit phone number so we can reach you.';
+note.className = 'form-note bad';
+note.hidden = false;
+}
+return;
+}
+
 if (LEAD_ENDPOINT.indexOf('PASTE_YOUR') === 0) {
 if (note) {
 note.textContent = 'This form is not connected yet — add the Apps Script Web App URL in assets/site.js.';

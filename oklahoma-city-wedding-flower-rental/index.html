@@ -108,13 +108,13 @@
         <p>Tell us your date and venue — we'll follow up within one business day.</p>
         <form class="quote-form" novalidate>
           <label for="okc-name">Name</label>
-          <input id="okc-name" name="name" type="text" placeholder="Jane Bride">
-          <label for="okc-phone">Number</label>
-          <input id="okc-phone" name="phone" type="tel" placeholder="(405) 555-0100">
-          <label for="okc-email">Email</label>
-          <input id="okc-email" name="email" type="email" placeholder="jane@email.com">
-          <label for="okc-notes">Notes on Event <span style="font-weight:400;color:#a9968d;">(optional)</span></label>
-          <textarea id="okc-notes" name="notes" rows="3" placeholder="Event date, venue, color palette, style..."></textarea>
+          <input id="okc-name" name="name" type="text" placeholder="Jane Bride" autocomplete="name" required>
+          <label for="okc-phone">Phone</label>
+          <input id="okc-phone" name="phone" type="tel" placeholder="(405) 555-0100" autocomplete="tel" required>
+          <label for="okc-email">Email <span style="font-weight:400;color:#a9968d;">(optional)</span></label>
+          <input id="okc-email" name="email" type="email" placeholder="jane@email.com" autocomplete="email">
+          <label for="okc-notes">Notes <span style="font-weight:400;color:#a9968d;">(optional)</span></label>
+          <textarea id="okc-notes" name="notes" rows="3" placeholder="Anything we should know? Event date, venue, colors (optional)"></textarea>
           <button type="submit" class="pill-btn">Request My Free Quote</button>
           <div class="fine">No obligation. We reply within one business day.</div>
           <div class="form-note" role="status" aria-live="polite" hidden></div>

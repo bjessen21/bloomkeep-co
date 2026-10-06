@@ -78,16 +78,16 @@
 <p>No obligation. We typically respond within one business day.</p>
 <form class="quote-form" novalidate>
 <label for="c-name">Name</label>
-<input id="c-name" name="name" type="text" placeholder="Jane Bride" autocomplete="name">
+<input id="c-name" name="name" type="text" placeholder="Jane Bride" autocomplete="name" required>
 
-<label for="c-phone">Number</label>
-<input id="c-phone" name="phone" type="tel" placeholder="(405) 555-0100" autocomplete="tel">
+<label for="c-phone">Phone</label>
+<input id="c-phone" name="phone" type="tel" placeholder="(405) 555-0100" autocomplete="tel" required>
 
-<label for="c-email">Email</label>
+<label for="c-email">Email <span style="font-weight:400;color:#a9968d;">(optional)</span></label>
 <input id="c-email" name="email" type="email" placeholder="jane@email.com" autocomplete="email">
 
-<label for="c-notes">Notes on Event <span style="font-weight:400;color:#a9968d;">(optional)</span></label>
-<textarea id="c-notes" name="notes" rows="4" placeholder="Event date, venue, color palette, style..."></textarea>
+<label for="c-notes">Notes <span style="font-weight:400;color:#a9968d;">(optional)</span></label>
+<textarea id="c-notes" name="notes" rows="3" placeholder="Anything we should know? Event date, venue, colors (optional)"></textarea>
 
 <button type="submit" class="pill-btn">Send My Request</button>
 <div class="fine">No obligation. We'll respond within one business day.</div>
