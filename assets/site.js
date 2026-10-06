@@ -51,7 +51,7 @@ if (menuBtn) menuBtn.setAttribute('aria-expanded', 'false');
 // Paste your deployed Web App URL below. See
 // apps-script-lead-form.gs.txt for deployment steps.
 // ---------------------------------------------------------------
-var LEAD_ENDPOINT = 'https://script.google.com/macros/s/AKfycbzwAZ_34VVE0t62bImlKrKhgj2S2ZFgZ9ErC0v0QnaiPi-zsf-5eLyD5zMkG7GtwMQqlw/exec';
+var LEAD_ENDPOINT = '/api/lead';
 
 document.querySelectorAll('form.quote-form').forEach(function (form) {
 var note = form.querySelector('.form-note');
@@ -82,7 +82,7 @@ var data = new FormData(form);
 // body can't be read from fetch(). mode:"no-cors" lets the POST
 // go through and land in the Sheet; a successful fetch (no network
 // error) is treated as success here.
-fetch(LEAD_ENDPOINT, { method: 'POST', mode: 'no-cors', body: data })
+fetch(LEAD_ENDPOINT, { method: 'POST', body: data }).then(function (r) { if (!r.ok) throw new Error('HTTP ' + r.status); })
 .then(function () {
 form.reset();
 // Note: the confirmation message lives inside the form, so we
